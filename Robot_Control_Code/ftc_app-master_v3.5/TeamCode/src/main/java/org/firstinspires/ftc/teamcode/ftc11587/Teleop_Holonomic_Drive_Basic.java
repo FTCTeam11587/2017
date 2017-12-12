@@ -17,6 +17,10 @@ public class BasicHolonomicDrive extends LinearOpMode {
 	DcMotor lrMotor = null;
 	DcMotor rrMotor = null;
 
+	DcMotor armBaseMotor = null;
+	DcMotor firstArmMotor = null;
+	DcMotor secondArmMotor = null;
+
 	Servo clawServo = null;
 
 	@Override
@@ -71,13 +75,13 @@ public class BasicHolonomicDrive extends LinearOpMode {
 			 *
 			 *              LEFT JOYSTICK       						RIGHT JOYSTICK
 			 *
-			 *              Move Forward								    Null
+			 *              Move Forward								 Arm Raise
 			 *       		      ^										     ^
 			 *       			  |										     |
 			 * Strafe Left <-----   -----> Strafe Right   Rotate Left <-----   -----> Rotate Right
 			 *       			  |											 |
 			 *       			  v											 v
-			 *              Move Backward									Null
+			 *              Move Backward								 Arm Lower
 			 *
 			 */
 
