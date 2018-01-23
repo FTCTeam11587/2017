@@ -1,15 +1,16 @@
-package org.firstinspires.ftc.teamcode.ftc11587;
+package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
-import com.qualcomm.robotcore.eventloop.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.Range;
 
 @TeleOp(name="Relic Recovery: Basic Holonomic Drive", group="Relic Recovery")
 @Disabled //comment out this line to add this OpMode to the Driver Station select list
 
-public class BasicHolonomicDrive extends LinearOpMode {
+public class Teleop_Holonomic_Drive_Basic extends LinearOpMode {
 
 	/*Declarations*/
 	DcMotor lfMotor = null;
@@ -44,7 +45,7 @@ public class BasicHolonomicDrive extends LinearOpMode {
 
 		/*Hardware mapping for arm motors*/
 		armBaseMotor = hardwareMap.dcMotor.get("armbasemotor");
-		firstArmMotor = harwareMap.dcMotor.get("firstarmmotor");
+		firstArmMotor = hardwareMap.dcMotor.get("firstarmmotor");
 		secondArmMotor = hardwareMap.dcMotor.get("secondarmmotor");
 
 		/*Change motor polarity for arm motors - 1st/2nd should be opposite each other*/
@@ -52,14 +53,14 @@ public class BasicHolonomicDrive extends LinearOpMode {
 		secondArmMotor.setDirection(DcMotor.Direction.REVERSE);
 
 		/*Hardware mapping for claw servo*/
-		clawServo = hardwareMap.Servo.get("clawservo");
+		clawServo = hardwareMap.servo.get("clawservo");
 
 		/*Wait until the driver presses PLAY*/
 		waitForStart();
 
 		while (opModeIsActive()) {
 
-		public void moveRobot() {
+		    public void moveRobot() {
 			/* Robot Drivetrain Configuration
 			 *
 			 *           _______
@@ -105,14 +106,14 @@ public class BasicHolonomicDrive extends LinearOpMode {
 			//Can it really be this easy?
 
 			/*Clipping method -- UGLY!*/
-			lfPwr_clip = Range.clip(lfPwr, -1, 1);
-			rfPwr_clip = Range.clip(rfPwr, -1, 1);
-			lrPwr_clip = Range.clip(lrPwr, -1, 1);
-			rrPwr_clip = Range.clip(rrPwr, -1, 1);
+            float lfPwr_clip = Range.clip(lfPwr, -1, 1);
+			float rfPwr_clip = Range.clip(rfPwr, -1, 1);
+			float lrPwr_clip = Range.clip(lrPwr, -1, 1);
+			float rrPwr_clip = Range.clip(rrPwr, -1, 1);
 
 			/*Set motor power - replace clipped values w/ scaled once scaling algorithm complete*/
 			lfMotor.setPower(lfPwr_clip);
-			rfMotor.setPower{rfPwr_clip);
+			rfMotor.setPower(rfPwr_clip);
 			lrMotor.setPower(lrPwr_clip);
 			rrMotor.setPower(rrPwr_clip);
 
@@ -141,8 +142,8 @@ public class BasicHolonomicDrive extends LinearOpMode {
 			float gp1_rjoy_y = -gamepad1.right_stick_y;
 
 			/*Arm base motor control*/
-			armBasePwr = gp1_rjoy_y;
-			armBasePwr_clip = Range.clip(armBasePwr, -1, 1);
+			float armBasePwr = gp1_rjoy_y;
+			float armBasePwr_clip = Range.clip(armBasePwr, -1, 1);
 			armBaseMotor.setPower(armBasePwr_clip);
 			telemetry.addData("Motor","Arm Base: (%.2f)",armBasePwr_clip);
 			telemetry.update();
@@ -187,9 +188,6 @@ public class BasicHolonomicDrive extends LinearOpMode {
 			/* Code which directs the robot to mount the balance platform
 			 * Assumes that the robot is positioned with front drive wheels pressed against the balance platform when initiated
 			 */
-		}
-
-		}
 		}
 	}
 }
