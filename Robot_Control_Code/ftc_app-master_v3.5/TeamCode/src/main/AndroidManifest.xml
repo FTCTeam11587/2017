@@ -8,5 +8,9 @@
 <manifest
     package="org.firstinspires.ftc.teamcode"
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <application/>
+    
+    <uses-sdk android:minSdkVersion="21"
+              android:targetSdkVersion="23"
+              android:maxSdkVersion="27" />
+        
 </manifest>

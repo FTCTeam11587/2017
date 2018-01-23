@@ -46,7 +46,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     android:id="@+id/top_bar"
     android:layout_width="fill_parent"
     android:layout_height="80dp"
-    android:background="@color/background_black">
+    android:background="@android:color/black">
 
     <ImageView
       android:id="@+id/robotIcon"
@@ -61,7 +61,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       android:layout_toEndOf="@id/robotIcon"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:textColor="?attr/textWhite"
+      android:textColor="#000000"
       android:textAppearance="?android:attr/textAppearanceMedium"
       android:padding="8dp"
       android:textStyle="bold"/>
