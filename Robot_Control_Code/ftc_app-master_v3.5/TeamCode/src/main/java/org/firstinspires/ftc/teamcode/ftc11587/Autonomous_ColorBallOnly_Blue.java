@@ -29,11 +29,14 @@ public class Autonomous_ColorBallOnly_Blue extends LinearOpMode {
     /*Constants*/
 
     static final double MM_INCH_CONVERSION = 25.4;
-    static final double WHEEL_DIAMETER = 4.0;
-    static final double HEXCOUNTS_DEGREE = 0.8;         //Counts per degree of motor rotation
-	static final double DEGREES_INCH = 28.66;
-	static final double HEXCOUNTS_INCH = Math.PI*WHEEL_DIAMETER;
 
+    static final double WHEEL_DIAMETER = 4.0;
+
+    static final double HEXCOUNTS_DEGREE = (288/360);         				//Hex motor counts per degree of motor rotation
+	static final double HEXCOUNTS_INCH = (288/(Math.PI * WHEEL_DIAMETER));	//Hex motor counts per inch of wheel rotation (not used)
+
+	static final double HDCOUNTS_DEGREE = (1120/360);		  				//HD motor counts per degree of motor rotation
+	static final double HDCOUNTS_INCH = (1120/(Math.PI * WHEEL_DIAMETER));	//HD motor counts per inch of wheel rotation
 
     static final double ARM1_LENGTH = 304.8;            //In mm
     static final double ARM2_LENGTH = 304.8;            //In mm
@@ -42,7 +45,7 @@ public class Autonomous_ColorBallOnly_Blue extends LinearOpMode {
     static final double WHEELBASE_ARMBASE_CTR = 90.93;  //In mm
     static final double WRIST_CLAW_LENGTH = 177.8;      //In mm
 
-	//Motor Declarations
+	/*Motor Declarations*/
 	
 	DcMotor lfMotor = null;
 	DcMotor rfMotor = null;
