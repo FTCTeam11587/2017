@@ -9,7 +9,7 @@ import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.Range;
 
 @TeleOp(name="Relic Recovery: Basic Holonomic Drive", group="Relic Recovery")
-@Disabled //comment out this line to add this OpMode to the Driver Station select list
+//@Disabled //comment out this line to add this OpMode to the Driver Station select list
 
 public class Teleop_Holonomic_Drive_Basic extends LinearOpMode {
 
